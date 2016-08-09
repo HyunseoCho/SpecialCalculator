@@ -9,6 +9,10 @@ public class Logger {
 	public static void setFilename(String filename) {
 		Logger.filename = filename;
 	}
+
+	public static String getFilename() {
+		return Logger.filename;
+	}
 	
 	public static void saveLog(String log) {
 		try {

@@ -1,8 +1,13 @@
 package com.hsj.specialcalculator;
 
+
+
 public class LengthConverter {
+
+
 	public static double centimeterToFeet(double c) {
-		double feet = c/30.48;
+
+		double feet = c / 30.48;
 		Logger.saveLog(c + " centimeters is converted into " + feet+ " feet");
 		return feet;
 	}

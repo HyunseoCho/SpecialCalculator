@@ -1,9 +1,16 @@
-The sum of the following numbers:[D@330bedb4 is 10.0
-The sum of the input numbers is 6.0
-The remainder of the input numbers is50.0
-The product of the following numbers is 120.0
-The quotient of the following numbers is0.08333333333333333
-The quotient of the following numbers is1.0
-The product of the following numbers is 0.0
-The quotient of the following numbers is1.0
-The product of the following numbers is 252.0
+The sum of the input numbers is 9.0
+10.0 centimeters is converted into 0.32808398950131235 feet
+50.0 centimeters is converted into 1.6404199475065617 feet
+30.0 feet is converted into 914.4 centimeters
+30.0 celcius is converted into -1.1111111111111112 fahrenheit
+30.0 fahrenheit is converted into 62.0 celcius
+30.0 celcius is converted into 86.0 fahrenheit
+30.0 fahrenheit is converted into -1.1111111111111112 celcius
+86.0 fahrenheit is converted into 30.0 celcius
+1.0 kilograms is converted into 0.4535147392290249 pounds
+1.0 centimeters is converted into 0.03280839895013123 feet
+6.0 feet is converted into 182.88 centimeters
+1.0 kilograms is converted into 2.205 pounds
+1.0 pounds is converted into 0.4535147392290249 kilograms
+30.0 celcius is converted into 86.0 fahrenheit
+86.0 fahrenheit is converted into 30.0 celcius

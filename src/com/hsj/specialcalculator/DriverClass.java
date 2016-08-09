@@ -1,7 +1,9 @@
 package com.hsj.specialcalculator;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.Scanner;
-
 
 public class DriverClass {
 	static Scanner scanner = new Scanner(System.in);
@@ -18,6 +20,7 @@ public class DriverClass {
 			System.out.println();
 			System.out.println("1. Calculator (+, -, x, /) ");
 			System.out.println("2. Converter (Length, Weight, Temperature) ");
+			System.out.println("3. View Log");
 			System.out.println("Any other number. Exit");
 			System.out.println("Input menu: ");
 			
@@ -26,12 +29,13 @@ public class DriverClass {
 			
 			switch (choice) {
 			case 1:
-				System.out.println("You have selected the calculator.");
 				calculate();
 				break;
 			case 2:
-				System.out.println("You selected the converter.");
 				convert();
+				break;
+			case 3:
+				viewLog();
 				break;
 			default:
 				exit = true;
@@ -39,11 +43,30 @@ public class DriverClass {
 			}
 		} while(exit != true);	
 	}
-	
+
+	private static void viewLog() {
+		System.out.println("[view log]");
+		boolean exit = false;
+		try {
+			String filename = Logger.getFilename();
+			BufferedReader in = new BufferedReader(new FileReader(filename));
+			int index = 1;
+			while (true) {
+				String line = in.readLine();
+				if (line == null) break;
+				System.out.print("[" + (index++) + "]");
+				System.out.println(line);
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
 	public static void calculate() {
 		boolean exit=false;
 		do {
 			System.out.println();
+			System.out.println("[calculator program]");
 			System.out.println("1. Addition");
 			System.out.println("2. Subtraction");
 			System.out.println("3. Multiplication");
@@ -108,6 +131,8 @@ public class DriverClass {
 	public static void convert() {
 		boolean exit=false;
 		do {
+			System.out.println();
+			System.out.println("[converter program]");
 			System.out.println("1. Centimeters to Feet");
 			System.out.println("2. Feet to Centimeters");
 			System.out.println("3. Kilograms to Pounds");
@@ -119,32 +144,50 @@ public class DriverClass {
 			
 			int choice = scanner.nextInt();
 			scanner.nextLine();
-			
+
+			double result = 0;
 			switch (choice) {
 			case 1:
 				System.out.println("You have selected Centimeters to Feet.");
-//				String 
-//				LengthConverter.centimeterToFeet();
+				System.out.println("How many centimeters do you want to convert into feet?");
+				double inputCentimeters= scanner.nextDouble();
+				result = LengthConverter.centimeterToFeet(inputCentimeters);
+				System.out.println(inputCentimeters + " centimeter -> " + result + " feet.");
 				break;
 			case 2:
 				System.out.println("You have selected Feet to Centimeters.");
-//				LengthConverter.feetToCentimeter();
+				System.out.println("How many feet do you want to convert into centimeters?");
+				double inputFeet= scanner.nextDouble();
+				result = LengthConverter.feetToCentimeter(inputFeet);
+				System.out.println(inputFeet + " feet -> " + result + " centimeters.");
 				break;
 			case 3:
 				System.out.println("You have selected Kilograms to Pounds.");
-//				WeightConverter.kilogramToPound();
+				System.out.println("How many kilograms do you want to convert into pounds?");
+				double inputKilograms= scanner.nextDouble();
+				result = WeightConverter.kilogramToPound(inputKilograms);
+				System.out.println(inputKilograms + " kilograms -> " + result + " pounds.");
 				break;
 			case 4:
 				System.out.println("You have selected Pounds to Kilograms.");
-//				WeightConverter.poundToKilogram();
+				System.out.println("How many pounds do you want to convert into kilograms?");
+				double inputPounds= scanner.nextDouble();
+				result = WeightConverter.poundToKilogram(inputPounds);
+				System.out.println(inputPounds + " pounds -> " + result + " kilograms.");
 				break;
 			case 5:
 				System.out.println("You have selected Celcius to Fahrenheit.");
-//				TemperatureConverter.celciusToFahrenheit();
+				System.out.println("How many degrees Celcius do you want to convert into degrees Fahrenheit?");
+				double inputCelcius= scanner.nextDouble();
+				result = TemperatureConverter.celciusToFahrenheit(inputCelcius);
+				System.out.println(inputCelcius + " celcius -> " + result + " fahrenheit.");
 				break;
 			case 6:
 				System.out.println("You have selected Fahrenheit to Celcius.");
-//				TemperatureConverter.FahrenheitToCelcius();
+				System.out.println("How many degrees Fahrenheit do you want to convert into Celcius?");
+				double inputFahrenheit=scanner.nextDouble();
+				result = TemperatureConverter.fahrenheitToCelcius(inputFahrenheit);
+				System.out.println(inputFahrenheit + " fahrenheit -> " + result + " celcius.");
 				break;
 			
 			default:
