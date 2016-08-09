@@ -1,0 +1,9 @@
+The sum of the following numbers:[D@330bedb4 is 10.0
+The sum of the input numbers is 6.0
+The remainder of the input numbers is50.0
+The product of the following numbers is 120.0
+The quotient of the following numbers is0.08333333333333333
+The quotient of the following numbers is1.0
+The product of the following numbers is 0.0
+The quotient of the following numbers is1.0
+The product of the following numbers is 252.0
